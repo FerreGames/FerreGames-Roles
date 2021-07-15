@@ -192,5 +192,5 @@ module.exports.sendMessage = async (client, message, args) => {
 }
  
 module.exports.help = {
-    name: "rr1"
+    name: "rr2"
 }
