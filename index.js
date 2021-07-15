@@ -25,6 +25,8 @@ fs.readdir("./Commands/", (err, files) => {
         client.commands.set(fileGet.help.name, fileGet);
 
     })
+
+    client.commands.get('rr1').initialize(client);
 });
 
 client.login(process.env.token);
@@ -52,6 +54,6 @@ client.on("message", async message => {
 
     var commands = client.commands.get(commands.slice(prefix.length));
     
-    if (commands) commands.run(client, message, args);
+    if (commands) commands.sendMessage(client, message, args);
 
 });
