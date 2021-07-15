@@ -60,7 +60,7 @@ module.exports.initialize = async (client) => {
             return;
         }
     });
- }
+}
 
 module.exports.sendMessage = async (client, message, args) => {
     const europeEmoji = "🔴"
