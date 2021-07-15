@@ -39,16 +39,16 @@ module.exports.initialize = async (client) => {
  }
 
 module.exports.sendMessage = async (client, message, args) => {
-    const announcementEmoji = "🔴"
-    const noAnnouncementEmoji = "🟠"
+    const announcementEmoji = "🔔"
+    const noAnnouncementEmoji = "🔕"
 
     const embed = new discord.MessageEmbed()
 
         .setTitle(`Ages | Ferre Games`)
         .setDescription(`Here you can choose a role to which your age belongs.\n`)
         .addFields(
-            { name: ':red_circle: ⇰', value: 'If you want to receive notifications' },
-            { name: ':orange_circle: ⇰', value: 'If you do not want to receive notifications' },
+            { name: ':bell: ⇰', value: 'If you want to receive notifications' },
+            { name: ':no_bell: ⇰', value: 'If you do not want to receive notifications' },
         )
         .setThumbnail(client.user.displayAvatarURL())
         .setFooter("Ferre Games©", client.user.displayAvatarURL())
