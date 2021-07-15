@@ -47,8 +47,8 @@ module.exports.sendMessage = async (client, message, args) => {
         .setTitle(`Ages | Ferre Games`)
         .setDescription(`Here you can choose a role to which your age belongs.\n`)
         .addFields(
-            { name: ':red_circle: ⇰', value: '' },
-            { name: ':orange_circle: ⇰', value: '' },
+            { name: ':red_circle: ⇰', value: 'If you want to receive notifications' },
+            { name: ':orange_circle: ⇰', value: 'If you do not want to receive notifications' },
         )
         .setThumbnail(client.user.displayAvatarURL())
         .setFooter("Ferre Games©", client.user.displayAvatarURL())
