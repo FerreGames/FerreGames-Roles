@@ -28,6 +28,7 @@ fs.readdir("./Commands/", (err, files) => {
 
     client.commands.get('rr1').initialize(client);
     client.commands.get('rr2').initialize(client);
+    client.commands.get('rr3').initialize(client);
 });
 
 client.login(process.env.token);
