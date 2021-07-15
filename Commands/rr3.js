@@ -44,8 +44,8 @@ module.exports.sendMessage = async (client, message, args) => {
 
     const embed = new discord.MessageEmbed()
 
-        .setTitle(`Ages | Ferre Games`)
-        .setDescription(`Here you can choose a role to which your age belongs.\n`)
+        .setTitle(`Announcements | Ferre Games`)
+        .setDescription(`Here you can choose a role according to how you want to receive announcementsIf you do not want to receive notifications.\n`)
         .addFields(
             { name: ':bell: ⇰', value: 'If you want to receive notifications' },
             { name: ':no_bell: ⇰', value: 'If you do not want to receive notifications' },

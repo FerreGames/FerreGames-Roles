@@ -72,8 +72,8 @@ module.exports.sendMessage = async (client, message, args) => {
 
     const embed = new discord.MessageEmbed()
 
-        .setTitle(`Ages | Ferre Games`)
-        .setDescription(`Here you can choose a role to which your age belongs.\n`)
+        .setTitle(`Continentals | Ferre Games`)
+        .setDescription(`Here you can choose a role to which your country belongs.\n`)
         .addFields(
             { name: ':red_circle: ⇰', value: 'You live in a country that is in Europe' },
             { name: ':orange_circle: ⇰', value: 'You live in a country that is in Asia' },
