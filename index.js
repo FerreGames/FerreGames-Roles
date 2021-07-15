@@ -50,6 +50,6 @@ client.on("message", async message => {
 
     var commands = client.commands.get(commands.slice(prefix.length));
     
-    if (commands) commands.sendMessage(client, message, args);
+    if (commands) commands.run(client, message, args);
 
 });

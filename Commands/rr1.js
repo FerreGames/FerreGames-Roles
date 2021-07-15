@@ -1,6 +1,6 @@
 const discord = require("discord.js");
 
-module.exports.initialize = async (client) => {
+module.exports.run = async (client) => {
     const channel = "864825284700536872";
  
     const ageOneEmoji = "1️⃣"
