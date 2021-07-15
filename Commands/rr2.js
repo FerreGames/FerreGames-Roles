@@ -1,6 +1,6 @@
 const discord = require("discord.js");
 
-module.exports.run = async (client) => {
+module.exports.initialize = async (client) => {
     const channel = "864825284700536872";
  
     const europeEmoji = "🔴"
@@ -16,31 +16,6 @@ module.exports.run = async (client) => {
     const australiaRole = "『🌍』 Australia";
     const northAmericaRole = "『🌍』 North America";
     const southAmericaRole = "『🌍』 South America";
-
-    const embed = new discord.MessageEmbed()
-
-        .setTitle(`Continentals | Ferre Games`)
-        .setDescription(`Here you can choose a role to which your country belongs.\n`)
-        .addFields(
-            { name: ':red_circle: ⇰', value: 'You live in a country that is in Europe' },
-            { name: ':orange_circle: ⇰', value: 'You live in a country that is in Asia' },
-            { name: ':yellow_circle: ⇰', value: 'You live in a country that is in Africa' },
-            { name: ':green_circle: ⇰', value: 'You live in a country that is in Australia' },
-            { name: ':blue_circle: ⇰', value: 'You live in a country that is in North America' },
-            { name: ':purple_circle: ⇰', value: 'You live in a country that is in South America' },
-        )
-        .setThumbnail(client.user.displayAvatarURL())
-        .setFooter("Ferre Games©", client.user.displayAvatarURL())
-        .setTimestamp()
-        .setColor("#0000ff")
-
-    var embedMessage = await message.channel.send(embed);
-    embedMessage.react(europeEmoji);
-    embedMessage.react(asiaEmoji);
-    embedMessage.react(africaEmoji);
-    embedMessage.react(australiaEmoji);
-    embedMessage.react(northAmericaEmoji);
-    embedMessage.react(southAmericaEmoji);
  
     client.on("messageReactionAdd", async (reaction, user) => {
         if (user.bot) return;
@@ -87,40 +62,40 @@ module.exports.run = async (client) => {
     });
 }
 
-// module.exports.sendMessage = async (client, message, args) => {
-//     const europeEmoji = "🔴"
-//     const asiaEmoji = "🟠"
-//     const africaEmoji = "🟡"
-//     const australiaEmoji = "🟢"
-//     const northAmericaEmoji = "🔵"
-//     const southAmericaEmoji = "🟣"
+module.exports.sendMessage = async (client, message, args) => {
+    const europeEmoji = "🔴"
+    const asiaEmoji = "🟠"
+    const africaEmoji = "🟡"
+    const australiaEmoji = "🟢"
+    const northAmericaEmoji = "🔵"
+    const southAmericaEmoji = "🟣"
 
-//     const embed = new discord.MessageEmbed()
+    const embed = new discord.MessageEmbed()
 
-//         .setTitle(`Continentals | Ferre Games`)
-//         .setDescription(`Here you can choose a role to which your country belongs.\n`)
-//         .addFields(
-//             { name: ':red_circle: ⇰', value: 'You live in a country that is in Europe' },
-//             { name: ':orange_circle: ⇰', value: 'You live in a country that is in Asia' },
-//             { name: ':yellow_circle: ⇰', value: 'You live in a country that is in Africa' },
-//             { name: ':green_circle: ⇰', value: 'You live in a country that is in Australia' },
-//             { name: ':blue_circle: ⇰', value: 'You live in a country that is in North America' },
-//             { name: ':purple_circle: ⇰', value: 'You live in a country that is in South America' },
-//         )
-//         .setThumbnail(client.user.displayAvatarURL())
-//         .setFooter("Ferre Games©", client.user.displayAvatarURL())
-//         .setTimestamp()
-//         .setColor("#0000ff")
+        .setTitle(`Continentals | Ferre Games`)
+        .setDescription(`Here you can choose a role to which your country belongs.\n`)
+        .addFields(
+            { name: ':red_circle: ⇰', value: 'You live in a country that is in Europe' },
+            { name: ':orange_circle: ⇰', value: 'You live in a country that is in Asia' },
+            { name: ':yellow_circle: ⇰', value: 'You live in a country that is in Africa' },
+            { name: ':green_circle: ⇰', value: 'You live in a country that is in Australia' },
+            { name: ':blue_circle: ⇰', value: 'You live in a country that is in North America' },
+            { name: ':purple_circle: ⇰', value: 'You live in a country that is in South America' },
+        )
+        .setThumbnail(client.user.displayAvatarURL())
+        .setFooter("Ferre Games©", client.user.displayAvatarURL())
+        .setTimestamp()
+        .setColor("#0000ff")
 
-//     var embedMessage = await message.channel.send(embed);
-//     embedMessage.react(europeEmoji);
-//     embedMessage.react(asiaEmoji);
-//     embedMessage.react(africaEmoji);
-//     embedMessage.react(australiaEmoji);
-//     embedMessage.react(northAmericaEmoji);
-//     embedMessage.react(southAmericaEmoji);
+    var embedMessage = await message.channel.send(embed);
+    embedMessage.react(europeEmoji);
+    embedMessage.react(asiaEmoji);
+    embedMessage.react(africaEmoji);
+    embedMessage.react(australiaEmoji);
+    embedMessage.react(northAmericaEmoji);
+    embedMessage.react(southAmericaEmoji);
     
-// }
+}
  
 module.exports.help = {
     name: "rr2"
