@@ -16,6 +16,31 @@ module.exports.initialize = async (client) => {
     const ageFourRole = "『🎊』36 - 45";
     const ageFiveRole = "『🎊』46 - 55";
     const ageSixRole = "『🎊』56+";
+
+    const embed = new discord.MessageEmbed()
+ 
+        .setTitle(`Ages | Ferre Games`)
+        .setDescription(`Here you can choose a role to which your age belongs.\n`)
+        .addFields(
+            { name: ':one: ⇰', value: 'Age between 6 & 15' },
+            { name: ':two: ⇰', value: 'Age between 16 & 25' },
+            { name: ':three: ⇰', value: 'Age between 26 & 35' },
+            { name: ':four: ⇰', value: 'Age between 36 & 45' },
+            { name: ':five: ⇰', value: 'Age between 46 & 55' },
+            { name: ':six: ⇰', value: 'Age above 55' },
+        )
+        .setThumbnail(client.user.displayAvatarURL())
+        .setFooter("Ferre Games©", client.user.displayAvatarURL())
+        .setTimestamp()
+        .setColor("#0000ff")
+
+    var embedMessage = await message.channel.send(embed);
+    embedMessage.react(ageOneEmoji);
+    embedMessage.react(ageTwoEmoji);
+    embedMessage.react(ageThreeEmoji);
+    embedMessage.react(ageFourEmoji);
+    embedMessage.react(ageFiveEmoji);
+    embedMessage.react(ageSixEmoji);
  
     client.on("messageReactionAdd", async (reaction, user) => {
         if (user.bot) return;
@@ -62,40 +87,40 @@ module.exports.initialize = async (client) => {
     });
  }
 
-module.exports.sendMessage = async (client, message, args) => {
-    const ageOneEmoji = "1️⃣"
-    const ageTwoEmoji = "2️⃣"
-    const ageThreeEmoji = "3️⃣"
-    const ageFourEmoji = "4️⃣"
-    const ageFiveEmoji = "5️⃣"
-    const ageSixEmoji = "6️⃣"
+// module.exports.sendMessage = async (client, message, args) => {
+//     const ageOneEmoji = "1️⃣"
+//     const ageTwoEmoji = "2️⃣"
+//     const ageThreeEmoji = "3️⃣"
+//     const ageFourEmoji = "4️⃣"
+//     const ageFiveEmoji = "5️⃣"
+//     const ageSixEmoji = "6️⃣"
 
-    const embed = new discord.MessageEmbed()
+//     const embed = new discord.MessageEmbed()
  
-        .setTitle(`Ages | Ferre Games`)
-        .setDescription(`Here you can choose a role to which your age belongs.\n`)
-        .addFields(
-            { name: ':one: ⇰', value: 'Age between 6 & 15' },
-            { name: ':two: ⇰', value: 'Age between 16 & 25' },
-            { name: ':three: ⇰', value: 'Age between 26 & 35' },
-            { name: ':four: ⇰', value: 'Age between 36 & 45' },
-            { name: ':five: ⇰', value: 'Age between 46 & 55' },
-            { name: ':six: ⇰', value: 'Age above 55' },
-        )
-        .setThumbnail(client.user.displayAvatarURL())
-        .setFooter("Ferre Games©", client.user.displayAvatarURL())
-        .setTimestamp()
-        .setColor("#0000ff")
+//         .setTitle(`Ages | Ferre Games`)
+//         .setDescription(`Here you can choose a role to which your age belongs.\n`)
+//         .addFields(
+//             { name: ':one: ⇰', value: 'Age between 6 & 15' },
+//             { name: ':two: ⇰', value: 'Age between 16 & 25' },
+//             { name: ':three: ⇰', value: 'Age between 26 & 35' },
+//             { name: ':four: ⇰', value: 'Age between 36 & 45' },
+//             { name: ':five: ⇰', value: 'Age between 46 & 55' },
+//             { name: ':six: ⇰', value: 'Age above 55' },
+//         )
+//         .setThumbnail(client.user.displayAvatarURL())
+//         .setFooter("Ferre Games©", client.user.displayAvatarURL())
+//         .setTimestamp()
+//         .setColor("#0000ff")
  
-    var embedMessage = await message.channel.send(embed);
-    embedMessage.react(ageOneEmoji);
-    embedMessage.react(ageTwoEmoji);
-    embedMessage.react(ageThreeEmoji);
-    embedMessage.react(ageFourEmoji);
-    embedMessage.react(ageFiveEmoji);
-    embedMessage.react(ageSixEmoji);
+//     var embedMessage = await message.channel.send(embed);
+//     embedMessage.react(ageOneEmoji);
+//     embedMessage.react(ageTwoEmoji);
+//     embedMessage.react(ageThreeEmoji);
+//     embedMessage.react(ageFourEmoji);
+//     embedMessage.react(ageFiveEmoji);
+//     embedMessage.react(ageSixEmoji);
     
-}
+// }
  
 module.exports.help = {
     name: "rr1"

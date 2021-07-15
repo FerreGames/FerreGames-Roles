@@ -1,8 +1,6 @@
 const discord = require("discord.js");
 const botConfig = require("./botconfig.json");
-
 const fs = require("fs");
-
 const client = new discord.Client();
 client.commands = new discord.Collection();
 
@@ -25,8 +23,6 @@ fs.readdir("./Commands/", (err, files) => {
         client.commands.set(fileGet.help.name, fileGet);
 
     })
-
-    client.commands.get('rr1', 'rr2', 'rr3').initialize(client);
 });
 
 client.login(process.env.token);
