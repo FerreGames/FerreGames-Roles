@@ -6,55 +6,55 @@ module.exports.initialize = async (client) => {
     const europeEmoji = "🔴"
     const asiaEmoji = "🟠"
     const africaEmoji = "🟡"
-    const aaustraliaEmoji = "🟢"
+    const australiaEmoji = "🟢"
     const northAmericaEmoji = "🔵"
     const southAmericaEmoji = "🟣"
  
-    const europeRole = message.guild.roles.cache.get("864442103571939338");
-    const asiaRole = message.guild.roles.cache.get("864443615378669599");
-    const africaRole = message.guild.roles.cache.get("864444140893110292");
-    const aaustraliaRole = message.guild.roles.cache.get("864444202602725397");
-    const northAmericaRole = message.guild.roles.cache.get("864444291212115978");
-    const southAmericaRole = message.guild.roles.cache.get("864444380630876180");
+    const europeRole = "『🌍』 Europe";
+    const asiaRole = "『🌍』 Asia";
+    const africaRole = "『🌍』 Africa";
+    const australiaRole = "『🌍』 Australia";
+    const northAmericaRole = "『🌍』 North America";
+    const southAmericaRole = "『🌍』 South America";
  
     client.on("messageReactionAdd", async (reaction, user) => {
         if (user.bot) return;
-
+ 
         if (reaction.message.channel.id == channel) {
             if (reaction.emoji.name == europeEmoji) {
-                await reaction.message.guild.members.cache.get(user.id).roles.add(europeRole);
+                await reaction.message.guild.members.cache.get(user.id).roles.add(reaction.message.guild.roles.cache.find(role => role.name === europeRole));
             } else if (reaction.emoji.name == asiaEmoji) {
-                await reaction.message.guild.members.cache.get(user.id).roles.add(asiaRole);
+                await reaction.message.guild.members.cache.get(user.id).roles.add(reaction.message.guild.roles.cache.find(role => role.name === asiaRole));
             } else if (reaction.emoji.name == africaEmoji) {
-                await reaction.message.guild.members.cache.get(user.id).roles.add(africaRole);
-            } else if (reaction.emoji.name == aaustraliaEmoji) {
-                await reaction.message.guild.members.cache.get(user.id).roles.add(aaustraliaRole);
+                await reaction.message.guild.members.cache.get(user.id).roles.add(reaction.message.guild.roles.cache.find(role => role.name === africaRole));
+            } else if (reaction.emoji.name == australiaEmoji) {
+                await reaction.message.guild.members.cache.get(user.id).roles.add(reaction.message.guild.roles.cache.find(role => role.name === australiaRole));
             } else if (reaction.emoji.name == northAmericaEmoji) {
-                await reaction.message.guild.members.cache.get(user.id).roles.add(northAmericaRole);
+                await reaction.message.guild.members.cache.get(user.id).roles.add(reaction.message.guild.roles.cache.find(role => role.name === northAmericaRole));
             } else if (reaction.emoji.name == southAmericaEmoji) {
-                await reaction.message.guild.members.cache.get(user.id).roles.add(southAmericaRole);
+                await reaction.message.guild.members.cache.get(user.id).roles.add(reaction.message.guild.roles.cache.find(role => role.name === southAmericaRole));
             }
         } else {
             return;
         }
     });
-
-    client.on("messageReactionRemove", async (reaction, user) => {
+ 
+    client.on("messageReactionAdd", async (reaction, user) => {
         if (user.bot) return;
-
+ 
         if (reaction.message.channel.id == channel) {
             if (reaction.emoji.name == europeEmoji) {
-                await reaction.message.guild.members.cache.get(user.id).roles.remove(europeRole);
+                await reaction.message.guild.members.cache.get(user.id).roles.remove(reaction.message.guild.roles.cache.find(role => role.name === europeRole));
             } else if (reaction.emoji.name == asiaEmoji) {
-                await reaction.message.guild.members.cache.get(user.id).roles.remove(asiaRole);
+                await reaction.message.guild.members.cache.get(user.id).roles.remove(reaction.message.guild.roles.cache.find(role => role.name === asiaRole));
             } else if (reaction.emoji.name == africaEmoji) {
-                await reaction.message.guild.members.cache.get(user.id).roles.remove(africaRole);
-            } else if (reaction.emoji.name == aaustraliaEmoji) {
-                await reaction.message.guild.members.cache.get(user.id).roles.remove(aaustraliaRole);
+                await reaction.message.guild.members.cache.get(user.id).roles.remove(reaction.message.guild.roles.cache.find(role => role.name === africaRole));
+            } else if (reaction.emoji.name == australiaEmoji) {
+                await reaction.message.guild.members.cache.get(user.id).roles.remove(reaction.message.guild.roles.cache.find(role => role.name === australiaRole));
             } else if (reaction.emoji.name == northAmericaEmoji) {
-                await reaction.message.guild.members.cache.get(user.id).roles.remove(northAmericaRole);
+                await reaction.message.guild.members.cache.get(user.id).roles.remove(reaction.message.guild.roles.cache.find(role => role.name === northAmericaRole));
             } else if (reaction.emoji.name == southAmericaEmoji) {
-                await reaction.message.guild.members.cache.get(user.id).roles.remove(southAmericaRole);
+                await reaction.message.guild.members.cache.get(user.id).roles.remove(reaction.message.guild.roles.cache.find(role => role.name === southAmericaRole));
             }
         } else {
             return;
@@ -66,7 +66,7 @@ module.exports.sendMessage = async (client, message, args) => {
     const europeEmoji = "🔴"
     const asiaEmoji = "🟠"
     const africaEmoji = "🟡"
-    const aaustraliaEmoji = "🟢"
+    const australiaEmoji = "🟢"
     const northAmericaEmoji = "🔵"
     const southAmericaEmoji = "🟣"
 
@@ -91,9 +91,9 @@ module.exports.sendMessage = async (client, message, args) => {
     embedMessage.react(europeEmoji);
     embedMessage.react(asiaEmoji);
     embedMessage.react(africaEmoji);
-    embedMessage.react(aaustraliaEmoji);
+    embedMessage.react(australiaEmoji);
     embedMessage.react(northAmericaEmoji);
-    embedMessage.react(southAmericaEmoji);;
+    embedMessage.react(southAmericaEmoji);
     
 }
  

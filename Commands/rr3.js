@@ -3,34 +3,34 @@ const discord = require("discord.js");
 module.exports.initialize = async (client) => {
     const channel = "864825284700536872";
  
-    const announcementEmoji = "🔔"
+    const AnnouncementEmoji = "🔔"
     const noAnnouncementEmoji = "🔕"
  
-    const announcementRole = message.guild.roles.cache.get("865162925178486784");
-    const noAnnouncementRole = message.guild.roles.cache.get("865163112504229939");
+    const AnnouncementRole = "『🔔』 Announcement";
+    const noAnnouncementRole = "『🔕』 No-Announcement";
  
     client.on("messageReactionAdd", async (reaction, user) => {
         if (user.bot) return;
-
+ 
         if (reaction.message.channel.id == channel) {
-            if (reaction.emoji.name == announcementEmoji) {
-                await reaction.message.guild.members.cache.get(user.id).roles.add(announcementRole);
+            if (reaction.emoji.name == AnnouncementEmoji) {
+                await reaction.message.guild.members.cache.get(user.id).roles.add(reaction.message.guild.roles.cache.find(role => role.name === AnnouncementRole));
             } else if (reaction.emoji.name == noAnnouncementEmoji) {
-                await reaction.message.guild.members.cache.get(user.id).roles.add(noAnnouncementRole);
+                await reaction.message.guild.members.cache.get(user.id).roles.add(reaction.message.guild.roles.cache.find(role => role.name === noAnnouncementRole));
             }
         } else {
             return;
         }
     });
-
-    client.on("messageReactionRemove", async (reaction, user) => {
+ 
+    client.on("messageReactionAdd", async (reaction, user) => {
         if (user.bot) return;
-
+ 
         if (reaction.message.channel.id == channel) {
-            if (reaction.emoji.name == announcementEmoji) {
-                await reaction.message.guild.members.cache.get(user.id).roles.remove(announcementRole);
+            if (reaction.emoji.name == AnnouncementEmoji) {
+                await reaction.message.guild.members.cache.get(user.id).roles.remove(reaction.message.guild.roles.cache.find(role => role.name === AnnouncementRole));
             } else if (reaction.emoji.name == noAnnouncementEmoji) {
-                await reaction.message.guild.members.cache.get(user.id).roles.remove(noAnnouncementRole);
+                await reaction.message.guild.members.cache.get(user.id).roles.remove(reaction.message.guild.roles.cache.find(role => role.name === noAnnouncementRole));
             }
         } else {
             return;
@@ -39,7 +39,7 @@ module.exports.initialize = async (client) => {
  }
 
 module.exports.sendMessage = async (client, message, args) => {
-    const announcementEmoji = "🔔"
+    const AnnouncementEmoji = "🔔"
     const noAnnouncementEmoji = "🔕"
 
     const embed = new discord.MessageEmbed()
@@ -56,7 +56,7 @@ module.exports.sendMessage = async (client, message, args) => {
         .setColor("#0000ff")
 
     var embedMessage = await message.channel.send(embed);
-    embedMessage.react(announcementEmoji);
+    embedMessage.react(AnnouncementEmoji);
     embedMessage.react(noAnnouncementEmoji);
     
 }
